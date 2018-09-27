@@ -2,8 +2,9 @@ package kodoom.com.fortnitetrackernewrelease;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -18,7 +19,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class upcomingItemsActivity extends AppCompatActivity {
 
-    ListView mListView;
+    RecyclerView mRecyclerView;
 
     final String UPCOMING_URL = "https://fortnite-public-api.theapinetwork.com/prod09/upcoming/get";
 
@@ -29,7 +30,7 @@ public class upcomingItemsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upcoming_items);
 
-        mListView = findViewById(R.id.itemStoreListView);
+        mRecyclerView = findViewById(R.id.itemStoreListView);
 
         getUpcomingItems();
     }
@@ -73,7 +74,8 @@ public class upcomingItemsActivity extends AppCompatActivity {
     }
 
     private void setListView(ArrayList<UpcomingItems> upcomingItems) {
-        UpcomingItemsListAdapter upcomingItemsListAdapter = new UpcomingItemsListAdapter(this, R.layout.activity_fortnite_upcoming_adapter, upcomingItems);
-        mListView.setAdapter(upcomingItemsListAdapter);
+        UpcomingItemsListAdapter upcomingItemsListAdapter = new UpcomingItemsListAdapter(this, upcomingItems);
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        mRecyclerView.setAdapter(upcomingItemsListAdapter);
     }
 }
