@@ -2,6 +2,8 @@ package kodoom.com.fortnitetrackernewrelease;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -18,7 +20,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class fortniteStoreActivity extends AppCompatActivity {
 
-    ListView storeListView;
+    RecyclerView storeListView;
 
     final String storeURL = "https://fortnite-public-api.theapinetwork.com/prod09/store/get";
 
@@ -29,7 +31,7 @@ public class fortniteStoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fortnite_store);
 
-        storeListView = findViewById(R.id.storeListView);
+        storeListView = findViewById(R.id.itemStoreListView);
 
         getCurrentStore();
     }
@@ -73,7 +75,8 @@ public class fortniteStoreActivity extends AppCompatActivity {
     }
 
     private void setListView(ArrayList<Store> store) {
-        StoreListAdapter storeListAdapter = new StoreListAdapter(this, R.layout.fortnite_store_adapter, store);
+        StoreListAdapter storeListAdapter = new StoreListAdapter(this, store);
+        storeListView.setLayoutManager(new GridLayoutManager(this, 2));
         storeListView.setAdapter(storeListAdapter);
     }
 

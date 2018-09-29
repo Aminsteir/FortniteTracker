@@ -30,7 +30,7 @@ public class upcomingItemsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upcoming_items);
 
-        mRecyclerView = findViewById(R.id.itemStoreListView);
+        mRecyclerView = findViewById(R.id.upcomingItemsRecyclerView);
 
         getUpcomingItems();
     }

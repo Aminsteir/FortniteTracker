@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#595959"
+    android:background="@color/colorAccent"
     tools:context=".playerStatsActivity">
 
     <TextView
         android:id="@+id/textBoxPlayerStats"
         android:layout_width="371dp"
         android:layout_height="118dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/buttonColor"
         android:fontFamily="@font/autour_one"
         android:gravity="center"
         android:text="Player Stats"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,54 +28,83 @@
         android:id="@+id/playerName"
         android:layout_width="wrap_content"
         android:layout_height="41dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@color/colorPrimaryDark"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/buttonColor"
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="Player Name"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/platform"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textBoxPlayerStats" />
-
-    <EditText
-        android:id="@+id/platform"
-        android:layout_width="wrap_content"
-        android:layout_height="41dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorPrimaryDark"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="textPersonName"
-        android:text="Platform: pc, xb1, ps4"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/getPlayerButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textBoxPlayerStats"
-        app:layout_constraintVertical_bias="0.703" />
 
     <Button
         android:id="@+id/getPlayerButton"
         android:layout_width="205dp"
         android:layout_height="57dp"
-        android:layout_marginBottom="128dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="128dp"
         android:background="@color/buttonColor"
         android:text="Get Player Stats"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/getPlayerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBoxPlayerStats"
+        app:layout_constraintVertical_bias="0.73">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="61dp"
+            android:layout_height="wrap_content"
+            android:background="@color/buttonColor"
+            android:buttonTint="@color/colorAccent"
+            android:text="PC"
+            android:textColor="@color/colorPrimary"
+            tools:layout_editor_absoluteX="103dp"
+            tools:layout_editor_absoluteY="406dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
+            android:background="@color/buttonColor"
+            android:buttonTint="@color/colorAccent"
+            android:text="PS4"
+            android:textColor="@color/colorPrimary"
+            tools:layout_editor_absoluteX="103dp"
+            tools:layout_editor_absoluteY="406dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/buttonColor"
+            android:buttonTint="@color/colorAccent"
+            android:text="Xbox"
+            android:textColor="@color/colorPrimary"
+            tools:layout_editor_absoluteX="103dp"
+            tools:layout_editor_absoluteY="406dp" />
+    </RadioGroup>
 
 </android.support.constraint.ConstraintLayout>

@@ -21,7 +21,7 @@ public class playerStatsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_player_stats);
 
         playerName = findViewById(R.id.playerName);
-        platform = findViewById(R.id.platform);
+        //platform = findViewById(R.id.platform);
         getPlayer = findViewById(R.id.getPlayerButton);
 
         getPlayer.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +43,7 @@ public class playerStatsActivity extends AppCompatActivity {
     private void getPlayer () {
         Intent intent = new Intent(playerStatsActivity.this, activity_player.class);
         intent.putExtra("playerName", playerName.getText().toString());
-        intent.putExtra("platform", platform.getText().toString());
+        //intent.putExtra("platform", platform.getText().toString());
         startActivity(intent);
     }
 }

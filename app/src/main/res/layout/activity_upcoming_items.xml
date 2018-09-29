@@ -37,7 +37,7 @@
         app:layout_constraintVertical_bias="0.62">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/itemStoreListView"
+            android:id="@+id/upcomingItemsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
