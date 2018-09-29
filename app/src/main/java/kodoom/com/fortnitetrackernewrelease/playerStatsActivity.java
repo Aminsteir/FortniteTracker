@@ -7,12 +7,18 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class playerStatsActivity extends AppCompatActivity {
 
     EditText playerName;
-    EditText platform;
+    RadioButton pcRadio;
+    RadioButton ps4Radio;
+    RadioButton xboxRadio;
     Button getPlayer;
 
     @Override
@@ -21,7 +27,11 @@ public class playerStatsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_player_stats);
 
         playerName = findViewById(R.id.playerName);
-        //platform = findViewById(R.id.platform);
+
+        pcRadio = findViewById(R.id.pcRadio);
+        ps4Radio = findViewById(R.id.ps4Radio);
+        xboxRadio = findViewById(R.id.xboxRadio);
+
         getPlayer = findViewById(R.id.getPlayerButton);
 
         getPlayer.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +53,15 @@ public class playerStatsActivity extends AppCompatActivity {
     private void getPlayer () {
         Intent intent = new Intent(playerStatsActivity.this, activity_player.class);
         intent.putExtra("playerName", playerName.getText().toString());
-        //intent.putExtra("platform", platform.getText().toString());
+        if (pcRadio.isChecked()) {
+            intent.putExtra("platform", "pc");
+        } else if (ps4Radio.isChecked()) {
+            intent.putExtra("platform", "ps4");
+        } else if (xboxRadio.isChecked()) {
+            intent.putExtra("platform", "xbox");
+        } else {
+            return;
+        }
         startActivity(intent);
     }
 }

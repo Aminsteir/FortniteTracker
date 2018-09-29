@@ -2,6 +2,7 @@ package kodoom.com.fortnitetrackernewrelease;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
@@ -95,6 +96,11 @@ public class activity_player extends AppCompatActivity {
                 PlayerDataModel playerDataModel = PlayerDataModel.fromJson(response);
 
                 if (playerDataModel.getPlayerName() == null) {
+                    Toast.makeText(activity_player.this, "Person Not Found", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(activity_player.this, playerStatsActivity.class);
+                    startActivity(intent);
+                    return;
+                } else if (playerDataModel.getTotalMatches() == "0") {
                     Toast.makeText(activity_player.this, "Person Not Found", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(activity_player.this, playerStatsActivity.class);
                     startActivity(intent);
