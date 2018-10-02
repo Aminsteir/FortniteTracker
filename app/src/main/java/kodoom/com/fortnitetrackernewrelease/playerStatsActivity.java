@@ -21,6 +21,8 @@ public class playerStatsActivity extends AppCompatActivity {
     RadioButton xboxRadio;
     Button getPlayer;
 
+    boolean platformChecked = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,8 @@ public class playerStatsActivity extends AppCompatActivity {
         xboxRadio = findViewById(R.id.xboxRadio);
 
         getPlayer = findViewById(R.id.getPlayerButton);
+
+        platformChecked = true;
 
         getPlayer.setOnClickListener(new View.OnClickListener() {
             @Override
