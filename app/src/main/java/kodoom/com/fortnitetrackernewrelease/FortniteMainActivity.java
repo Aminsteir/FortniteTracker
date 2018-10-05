@@ -1,5 +1,6 @@
 package kodoom.com.fortnitetrackernewrelease;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -56,7 +57,6 @@ public class FortniteMainActivity extends AppCompatActivity {
     ArrayList<News> newsList = new ArrayList<>();
 
     private InterstitialAd mInterstitialAd;
-
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {

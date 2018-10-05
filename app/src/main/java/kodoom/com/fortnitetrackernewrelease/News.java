@@ -1,5 +1,7 @@
 package kodoom.com.fortnitetrackernewrelease;
 
+import android.app.Dialog;
+
 public class News {
     private String imageURI;
     private String headline;
