@@ -4,7 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
+import android.view.DragEvent;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +45,14 @@ public class activity_player extends AppCompatActivity {
     TextView mSquadMatchesTextView;
     TextView mSquadWinRatioTextView;
 
+    SwitchCompat soloSwitch;
+    SwitchCompat duoSwitch;
+    SwitchCompat squadSwitch;
+
+    LinearLayout soloLayout;
+    LinearLayout duoLayout;
+    LinearLayout squadLayout;
+
     private String username = "Ninja";
     private String userID = "";
     private String platform = "pc";
@@ -67,6 +80,47 @@ public class activity_player extends AppCompatActivity {
         mSquadMatchesTextView = findViewById(R.id.squadMatches);
         mSquadWinRatioTextView = findViewById(R.id.squadWinRatio);
 
+        soloSwitch = findViewById(R.id.soloSwitch);
+        duoSwitch = findViewById(R.id.duoSwitch);
+        squadSwitch = findViewById(R.id.squadSwitch);
+
+        soloLayout = findViewById(R.id.soloLayout);
+        duoLayout = findViewById(R.id.duoLayout);
+        squadLayout = findViewById(R.id.squadLayout);
+
+        soloSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (!soloSwitch.isChecked()) {
+                    soloLayout.setVisibility(View.GONE);
+                } else {
+                    soloLayout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        duoSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (!duoSwitch.isChecked()) {
+                    duoLayout.setVisibility(View.GONE);
+                } else {
+                    duoLayout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        squadSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (!squadSwitch.isChecked()) {
+                    squadLayout.setVisibility(View.GONE);
+                } else {
+                    squadLayout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
     }
 
     @Override
@@ -75,6 +129,18 @@ public class activity_player extends AppCompatActivity {
         Intent myIntent = getIntent();
         username = myIntent.getStringExtra("playerName");
         platform = myIntent.getStringExtra("platform");
+
+        /*if (!soloSwitch.isChecked()) {
+            soloLayout.setVisibility(View.GONE);
+        }
+
+        if (!duoSwitch.isChecked()) {
+            duoLayout.setVisibility(View.GONE);
+        }
+
+        if (!squadSwitch.isChecked()) {
+            squadLayout.setVisibility(View.GONE);
+        }*/
 
         getPlayerStats();
     }
