@@ -11,6 +11,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -51,11 +55,31 @@ public class FortniteMainActivity extends AppCompatActivity {
 
     ArrayList<News> newsList = new ArrayList<>();
 
+    private InterstitialAd mInterstitialAd;
+
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fortnite_main);
+
+        /*MobileAds.initialize(this, "ca-app-pub-1989206618089867~6787489885");
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-1989206618089867/9394731107");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded () {
+                Log.d("Tracker", "ad loaded");
+                mInterstitialAd.show();
+            }
+        });*/
+
+        //TODO: WORK ON MOBILE ADS
+        //TODO: GOOD LINK: https://developers.google.com/admob/android/interstitial
+        //TODO: ADMOB INTERSTITIAL TAKES FOREVER TO LOAD (commented for now)
+
 
         playerStatsButton = findViewById(R.id.playerStatsButton);
         fortniteStoreButton = findViewById(R.id.currentStoreButton);

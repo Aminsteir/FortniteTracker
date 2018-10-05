@@ -30,6 +30,11 @@
         <activity android:name=".activity_player" />
         <!--<activity android:name=".FortniteStoreAdapterActivity" />-->
         <!--<activity android:name=".fortnite_upcoming_adapter"></activity>-->
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-1989206618089867~6787489885"/>
+
     </application>
 
 </manifest>
