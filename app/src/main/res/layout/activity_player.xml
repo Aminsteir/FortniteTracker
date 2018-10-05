@@ -28,7 +28,7 @@
         android:layout_width="157dp"
         android:layout_height="41dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="64dp"
         android:background="@color/buttonColor"
         android:gravity="center"
         android:text="Total Wins: 0"
@@ -41,8 +41,8 @@
         android:id="@+id/totalKillsTextView"
         android:layout_width="157dp"
         android:layout_height="41dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginTop="30dp"
         android:background="@color/buttonColor"
         android:gravity="center"
         android:text="Total Kills: 0"
@@ -55,9 +55,9 @@
         android:id="@+id/totalMatchesPlayedTextView"
         android:layout_width="213dp"
         android:layout_height="38dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/buttonColor"
         android:gravity="center"
         android:text="Matches Played: 0"
@@ -71,9 +71,9 @@
         android:id="@+id/totalWinRatio"
         android:layout_width="210dp"
         android:layout_height="36dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/buttonColor"
         android:gravity="center"
         android:text="Win Ratio: 0"
@@ -83,241 +83,310 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalMatchesPlayedTextView" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="110dp"
-        android:layout_height="240dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/buttonColor"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/soloSwitch"
+        style="@style/SwitchCompatTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/radialbackground"
+        android:checked="true"
+        android:gravity="center"
+        android:text="Solo"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="italic"
+        android:theme="@style/SwitchCompatTheme"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/totalWinRatio">
+        app:layout_constraintTop_toBottomOf="@+id/totalWinRatio" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="Solo"
-            android:textColor="@color/colorAccent"
-            android:textSize="24sp" />
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/duoSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/radialbackground"
+        android:checked="true"
+        android:gravity="center"
+        android:text="Duo"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="italic"
+        android:theme="@style/SwitchCompatTheme"
+        app:layout_constraintStart_toEndOf="@+id/soloSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/totalWinRatio" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
-
-        <TextView
-            android:id="@+id/soloWins"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Wins: 0"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
-
-        <TextView
-            android:id="@+id/soloKills"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Kills: 0"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
-
-        <TextView
-            android:id="@+id/soloMatches"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Matches: 0"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
-
-        <TextView
-            android:id="@+id/soloWinRatio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Win Ratio: 0"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
-    </LinearLayout>
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/squadSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/radialbackground"
+        android:checked="true"
+        android:gravity="center"
+        android:text="Squad"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="italic"
+        android:theme="@style/SwitchCompatTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/duoSwitch"
+        app:layout_constraintTop_toBottomOf="@+id/totalWinRatio" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="110dp"
-        android:layout_height="240dp"
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:background="@color/buttonColor"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/totalWinRatio">
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="Duo"
-            android:textColor="@color/colorAccent"
-            android:textSize="24sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
-
-        <TextView
-            android:id="@+id/duoWins"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Wins: 0"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
-
-        <TextView
-            android:id="@+id/duoKills"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Kills: 0"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
-
-        <TextView
-            android:id="@+id/duoMatches"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Matches: 0"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
-
-        <TextView
-            android:id="@+id/duoWinRatio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Win Ratio: 0"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="110dp"
-        android:layout_height="240dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/buttonColor"
-        android:orientation="vertical"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/totalWinRatio">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/duoSwitch"
+        app:layout_constraintVertical_bias="1.0">
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:text="Squad"
-            android:textColor="@color/colorAccent"
-            android:textSize="24sp" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="110dp"
+            android:layout_height="240dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/buttonColor"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalWinRatio">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="Solo"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/squadWins"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Wins: 0"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
+            <TextView
+                android:id="@+id/soloWins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Wins: 0"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/squadKills"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Kills: 0"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
+            <TextView
+                android:id="@+id/soloKills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Kills: 0"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/squadMatches"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Matches: 0"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
+            <TextView
+                android:id="@+id/soloMatches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Matches: 0"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/squadWinRatio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Win Ratio: 0"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5pt" />
+            <TextView
+                android:id="@+id/soloWinRatio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Win Ratio: 0"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="110dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/buttonColor"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/totalWinRatio">
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="Duo"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
+
+            <TextView
+                android:id="@+id/duoWins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Wins: 0"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
+
+            <TextView
+                android:id="@+id/duoKills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Kills: 0"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
+
+            <TextView
+                android:id="@+id/duoMatches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Matches: 0"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
+
+            <TextView
+                android:id="@+id/duoWinRatio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Win Ratio: 0"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="110dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/buttonColor"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalWinRatio">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="Squad"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
+
+            <TextView
+                android:id="@+id/squadWins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Wins: 0"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
+
+            <TextView
+                android:id="@+id/squadKills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Kills: 0"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
+
+            <TextView
+                android:id="@+id/squadMatches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Matches: 0"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
+
+            <TextView
+                android:id="@+id/squadWinRatio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Win Ratio: 0"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5pt" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
