@@ -6,30 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".FortniteMainActivity">
 
-    <Button
+    <ImageView
         android:id="@+id/playerStatsButton"
         android:layout_width="383dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/buttonColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/person_white_icon" />
+
+    <Button
+        android:id="@+id/playerStatsButtonOld"
+        android:layout_width="383dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/buttonColor"
         android:text="Find Player Stats"
         android:textColor="@color/colorAccent"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageView
         android:id="@+id/currentStoreButton"
         android:layout_width="383dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/buttonColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerStatsButton"
+        app:srcCompat="@drawable/ic_local_grocery_store_black_24dp" />
+
+    <Button
+        android:id="@+id/currentStoreButtonOld"
+        android:layout_width="383dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/buttonColor"
         android:text="Get Current Store"
         android:textColor="@color/colorAccent"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playerStatsButton" />
@@ -38,9 +66,9 @@
         android:id="@+id/upcomingItemsButton"
         android:layout_width="383dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
         android:background="@color/buttonColor"
         android:text="Upcoming Items"
         android:textColor="@color/colorAccent"

@@ -1,7 +1,5 @@
 package kodoom.com.fortnitetrackernewrelease;
 
-import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,10 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -26,14 +21,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
-import kodoom.com.fortnitetrackernewrelease.News;
-import kodoom.com.fortnitetrackernewrelease.NewsDataModel;
-import kodoom.com.fortnitetrackernewrelease.NewsListAdapter;
-import kodoom.com.fortnitetrackernewrelease.R;
-import kodoom.com.fortnitetrackernewrelease.activity_location;
-import kodoom.com.fortnitetrackernewrelease.fortniteStoreActivity;
-import kodoom.com.fortnitetrackernewrelease.playerStatsActivity;
-import kodoom.com.fortnitetrackernewrelease.upcomingItemsActivity;
 
 
 public class FortniteMainActivity extends AppCompatActivity {
@@ -46,8 +33,8 @@ public class FortniteMainActivity extends AppCompatActivity {
     final String API_KEY = "a38733c595bcff8adbef7fa2854b8fc5";
     final String newsLink = "https://www.epicgames.com/fortnite/en-US/news";
 
-    Button playerStatsButton;
-    Button fortniteStoreButton;
+    ImageView playerStatsButton;
+    ImageView fortniteStoreButton;
     Button upcomingItemsButton;
     Button randomLocationButton;
     ListView newsListView;
