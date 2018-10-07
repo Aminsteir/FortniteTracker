@@ -28,6 +28,10 @@
         <activity android:name=".upcomingItemsActivity" />
         <activity android:name=".activity_location" />
         <activity android:name=".activity_player" />
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
         <!--<activity android:name=".FortniteStoreAdapterActivity" />-->
         <!--<activity android:name=".fortnite_upcoming_adapter"></activity>-->
 

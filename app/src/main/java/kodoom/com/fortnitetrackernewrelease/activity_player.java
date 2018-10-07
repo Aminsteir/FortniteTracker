@@ -163,13 +163,15 @@ public class activity_player extends AppCompatActivity {
 
                 if (playerDataModel.getPlayerName() == null) {
                     Toast.makeText(activity_player.this, "Person Not Found", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(activity_player.this, playerStatsActivity.class);
-                    startActivity(intent);
+                    /*Intent intent = new Intent(activity_player.this, playerStatsActivity.class);
+                    startActivity(intent);*/
+                    finish();
                     return;
                 } else if (playerDataModel.getTotalMatches() == "0") {
                     Toast.makeText(activity_player.this, "Person Not Found", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(activity_player.this, playerStatsActivity.class);
-                    startActivity(intent);
+                    /*Intent intent = new Intent(activity_player.this, playerStatsActivity.class);
+                    startActivity(intent);*/
+                    finish();
                     return;
                 }
 

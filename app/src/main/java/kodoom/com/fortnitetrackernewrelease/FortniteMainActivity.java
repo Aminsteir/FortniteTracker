@@ -1,6 +1,7 @@
 package kodoom.com.fortnitetrackernewrelease;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -56,20 +57,22 @@ public class FortniteMainActivity extends AppCompatActivity {
 
     ArrayList<News> newsList = new ArrayList<>();
 
-    private InterstitialAd mInterstitialAd;
+    InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fortnite_main);
 
-        /*MobileAds.initialize(this, "ca-app-pub-1989206618089867~6787489885");
+       /* MobileAds.initialize(this, "ca-app-pub-1989206618089867~6787489885");
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-1989206618089867/9394731107");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        //mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/8691691433"); interstitial video test
+        mInterstitialAd.setAdUnitId("ca-app-pub-1989206618089867/6182491829");
+        //mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); interstitial test
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());*/
 
-        mInterstitialAd.setAdListener(new AdListener() {
+        /*mInterstitialAd.setAdListener(new AdListener() {
             public void onAdLoaded () {
                 Log.d("Tracker", "ad loaded");
                 mInterstitialAd.show();
@@ -93,8 +96,24 @@ public class FortniteMainActivity extends AppCompatActivity {
         playerStatsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                /*if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Intent intent = new Intent(FortniteMainActivity.this, playerStatsActivity.class);
+                    startActivity(intent);
+                }
+
+                mInterstitialAd.setAdListener(new AdListener() {
+                    public void onAdClosed () {
+                        Intent intent = new Intent(FortniteMainActivity.this, playerStatsActivity.class);
+                        startActivity(intent);
+                    }
+                });*/
+
                 Intent intent = new Intent(FortniteMainActivity.this, playerStatsActivity.class);
                 startActivity(intent);
+
             }
         });
 
