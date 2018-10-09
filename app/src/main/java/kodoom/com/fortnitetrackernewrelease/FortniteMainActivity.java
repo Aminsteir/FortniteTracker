@@ -1,11 +1,13 @@
 package kodoom.com.fortnitetrackernewrelease;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,10 +35,10 @@ public class FortniteMainActivity extends AppCompatActivity {
     final String API_KEY = "a38733c595bcff8adbef7fa2854b8fc5";
     final String newsLink = "https://www.epicgames.com/fortnite/en-US/news";
 
-    ImageView playerStatsButton;
-    ImageView fortniteStoreButton;
-    Button upcomingItemsButton;
-    Button randomLocationButton;
+    ImageButton playerStatsButton;
+    ImageButton fortniteStoreButton;
+    ImageButton upcomingItemsButton;
+    ImageButton randomLocationButton;
     ListView newsListView;
     ImageView newsImage;
     TextView newsHeadline;
