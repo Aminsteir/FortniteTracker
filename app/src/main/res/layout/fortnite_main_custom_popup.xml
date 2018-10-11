@@ -3,7 +3,7 @@
     android:layout_width="350dp"
     android:layout_height="380dp"
     android:layout_gravity="center"
-    android:background="@color/buttonColorLessTransparent"
+    android:background="@drawable/button_background_more_opaque"
     android:orientation="vertical"
     android:padding="5dp">
 
